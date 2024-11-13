@@ -23,9 +23,10 @@ export class CheckoutPage {
     this.cancelButton = page.locator('[data-test="cancel"]');
   }
 
-  async fillForm(firstName: string, lastName: string, zipPostalCode: string) {
+  async fillOutFormAndContinue(firstName: string, lastName: string, zipPostalCode: string) {
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
     await this.zipPostalCodeInput.fill(zipPostalCode);
+    await this.continueButton.click();
   }
 }

@@ -35,8 +35,7 @@ test.describe("Checkout Form Tests", () => {
     await addProductsAndProceedToCheckout(page);
     await expect(checkoutPage.secondHeader).toBeVisible();
     await expect(checkoutPage.form).toBeVisible();
-    await checkoutPage.fillForm("John", "Doe", "12345");
-    await checkoutPage.continueButton.click();
+    await checkoutPage.fillOutFormAndContinue("John", "Doe", "12345");
   });
 
   test("Check empty form validation", async ({ page }) => {
